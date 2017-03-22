@@ -3,7 +3,8 @@ String url = "/update?api_key=YIT2PGAX14KHHQGA";
 const int httpPort = 80;
 int interval = 20000;
 
-int t = -1;
+float data= 0;
+int t = 0;
 
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
@@ -12,10 +13,8 @@ const char *ssid = "olleh_WiFi_88DF";
 const char *password = "0000007063";
 
 String working() {
-  float data;
-
   t++;
-  if(!(t % 20))
+  if(t % 10 == 0)
   {
     data = 1 - data;
   }
